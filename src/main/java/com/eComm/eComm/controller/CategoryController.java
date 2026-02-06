@@ -4,6 +4,7 @@ import com.eComm.eComm.Service.CategoryService;
 import com.eComm.eComm.io.CategoryRequest;
 import com.eComm.eComm.io.CategoryResponse;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.boot.json.JsonParseException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import tools.jackson.databind.ObjectMapper;
 import java.util.List;
 
 @RestController
+@Tag(name ="Admin API")
 public class CategoryController
 {
     private final CategoryService categoryService;
