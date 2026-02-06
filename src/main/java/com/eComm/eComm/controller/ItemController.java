@@ -4,6 +4,7 @@ import com.eComm.eComm.Service.ItemService;
 import com.eComm.eComm.io.ItemRequest;
 import com.eComm.eComm.io.ItemResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name ="Admin API")
 public class ItemController
 {
     //Dependency Injection : we need to inject ItemService to call service / Business logic
