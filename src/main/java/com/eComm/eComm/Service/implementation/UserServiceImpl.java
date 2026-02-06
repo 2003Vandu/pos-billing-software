@@ -46,7 +46,9 @@ public class UserServiceImpl implements UserService
     private UserResponse covertToResponse(UserEntity newUser) {
 
        return  UserResponse.builder()
-                .name(newUser.getUserId())
+
+               //.name(newUser.getUserId())
+                .name(newUser.getName())
                 .email(newUser.getEmail())
                 .userId(newUser.getUserId())
                 .createdAt(newUser.getCreatedAt())

@@ -1,6 +1,7 @@
-package com.eComm.eComm.Service.Implementation;
+package com.eComm.eComm.Service.implementation;
 
 import com.eComm.eComm.Repository.CategoryRepository;
+import com.eComm.eComm.Repository.ItemRepository;
 import com.eComm.eComm.Service.CategoryService;
 import com.eComm.eComm.entity.CategoryEntity;
 import com.eComm.eComm.io.CategoryRequest;
@@ -19,6 +20,8 @@ public class categoryServiceimpl implements CategoryService
 {
 
     private final CategoryRepository categoryRepository;
+
+    private final ItemRepository itemRepository;
 
     private final com.eComm.eComm.Service.implementation.FileUploadServiceImpl fileUploadService;
 
@@ -58,7 +61,8 @@ public class categoryServiceimpl implements CategoryService
     }
 
     private CategoryResponse convertToResponse(CategoryEntity newCategory) {
-
+        //Add to get itemcount
+        Integer itemsCount =  itemRepository.countByCategoryId(newCategory.getId());
         return CategoryResponse.builder()
                 .categoryId(newCategory.getCategoryId())
                 .name(newCategory.getName())
@@ -67,6 +71,7 @@ public class categoryServiceimpl implements CategoryService
                 .imgUrl(newCategory.getImgUrl())
                 .createdAt(newCategory.getCreatedAt())
                 .updatedAt(newCategory.getUpdatedAt())
+                .items(itemsCount)
                 .build();
 
     }

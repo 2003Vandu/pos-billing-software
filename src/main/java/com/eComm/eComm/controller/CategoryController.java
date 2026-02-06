@@ -22,8 +22,9 @@ public class CategoryController
 
         this.categoryService = categoryService;
     }
-    @RequestMapping("/admin/categories")
-    @PostMapping
+
+
+    @PostMapping("/admin/categories")
     @ResponseStatus(HttpStatus.CREATED)
     public CategoryResponse addcategory(@RequestPart("category") String categoryString ,
                                         @RequestPart("file")MultipartFile file
@@ -40,7 +41,7 @@ public class CategoryController
         }
     }
 
-    @GetMapping
+    @GetMapping("/categories")
     public List<CategoryResponse> featchcategories()
     {
         return  categoryService.read();

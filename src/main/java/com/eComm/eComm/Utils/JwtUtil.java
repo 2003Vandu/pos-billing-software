@@ -36,7 +36,7 @@ public class JwtUtil
                 .setClaims(claims)
                 .setSubject(subject)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 5)) // 5 minutes
+                .setExpiration(new Date(System.currentTimeMillis() + 60 * 60 * 1000)) // 5 minutes
                 .signWith(getSigningKey())
                 .compact();
     }
@@ -54,10 +54,16 @@ public class JwtUtil
     }
 
     private Claims extractAllClaims(String token) {
-        return Jwts.parser()
-                .setSigningKey(getSigningKey()) // old method
+//        return Jwts.parser()
+//                .setSigningKey(getSigningKey()) // old method
+//                .parseClaimsJws(token)
+//                .getBody();
+        return Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
                 .parseClaimsJws(token)
                 .getBody();
+
 
 
     }
