@@ -5,6 +5,7 @@ import com.eComm.eComm.Service.implementation.AppUserDetailsService;
 import com.eComm.eComm.Utils.JwtUtil;
 import com.eComm.eComm.io.AuthRequest;
 import com.eComm.eComm.io.AuthResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,6 +23,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "Auth API")
 public class AuthController
 {
     // dependency injection
