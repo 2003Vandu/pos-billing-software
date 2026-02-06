@@ -1,9 +1,9 @@
 package com.eComm.eComm.controller;
 
-import com.eComm.eComm.Repository.UserRepository;
 import com.eComm.eComm.Service.UserService;
 import com.eComm.eComm.io.UserRequest;
 import com.eComm.eComm.io.UserResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/admin")
+@Tag(name ="User API")
 public class UserController {
 
     private final UserService userService;
