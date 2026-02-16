@@ -101,5 +101,5 @@ Once the application is running, you can access the interactive API documentatio
 ## 🧾 Author
 * 👤  **Vandesh Ghodke**
 * 🎯 **Java Backend Developer** | B.Tech Automation & Robotic 2025
-* 📧 **vandesghodke2003@gmail.com**
+* 📧 **vandesghodke2003@gmail.com**  
 * 🔗 **GitHub – 2003Vandu**
